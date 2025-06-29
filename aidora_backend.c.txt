@@ -1,0 +1,30 @@
+// aidora_backend.c
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_INSTRUCTION 1024
+
+// Simulated database - for demo; can be extended to read from file
+typedef struct {
+    char symptom[50];
+    char instruction[MAX_INSTRUCTION];
+} FirstAid;
+
+FirstAid db[] = {
+    {"burn", "Cool the burn under running water for at least 10 minutes. Do not apply ice."},
+    {"cut", "Apply pressure to stop bleeding. Clean with water. Cover with sterile dressing."},
+    {"choking", "Give 5 back blows between the person's shoulder blades with the heel of your hand."},
+    {"fainting", "Lay the person flat, raise their legs, and keep them warm until they recover."}
+};
+
+int search_instruction(const char* symptom, char* result) {
+    int i;
+    for (i = 0; i < sizeof(db) / sizeof(db[0]); i++) {
+        if (strcasecmp(symptom, db[i].symptom) == 0) {
+            strcpy(result, db[i].instruction);
+            return 1; // Found
+        }
+    }
+    strcpy(result, "No instructions found for the given symptom.");
+    return 0; // Not found
+}
