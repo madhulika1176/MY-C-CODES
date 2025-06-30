@@ -1,0 +1,5 @@
+step 1 : go into the correct file location by first checking current file location using dir and then changing file location by using cd
+step 2 : use command git init
+step 3 : use command git add <filename.appropriate extension>
+step 4 : use command git commit -m "message"
+step 5 : use command git push -u origin main 
