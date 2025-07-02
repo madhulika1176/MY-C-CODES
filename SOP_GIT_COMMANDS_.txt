@@ -2,4 +2,6 @@ step 1 : go into the correct file location by first checking current file locati
 step 2 : use command git init
 step 3 : use command git add <filename.appropriate extension>
 step 4 : use command git commit -m "message"
-step 5 : use command git push -u origin main 
+step 5 : git remote add origin https://github.com/your-username/your-repo-name.git
+step 6 : git push -u origin main
+step 7 : git push -u origin master
